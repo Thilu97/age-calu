@@ -1,0 +1,30 @@
+{
+  "configs": [
+    "age-calculator-sapi-poc-dev.xml",
+    "global-configuration.xml"
+  ],
+  "secureProperties": [],
+  "supportedJavaVersions": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:age-calculator:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.6.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "age-calculator-sapi-poc-dev.xml",
+        "api/age-calculator-sapi-poc-dev.raml",
+        "application-types.xml",
+        "global-configuration.xml",
+        "log4j2.xml",
+        "properties/wesco-sapi-calculator-dev.yaml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

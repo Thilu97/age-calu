@@ -1,0 +1,40 @@
+#%RAML 1.0
+title: age-calculator-sapi-poc-dev
+baseUri: http://localhost:8081/
+types:
+  BirthDateRequest:
+    type: object
+    properties:
+      birthdate:
+        type: string
+        required: true
+        example: "2002-02-07"
+  AgeResponse:
+     type: object
+     properties:
+      age:
+        type: integer
+        example: 23
+  ErrorResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Please enter a valid birthdate"      
+/age:
+  get:
+    description: Calculates age based on the provided birthdate.
+    body:
+      application/json:
+        type: BirthDateRequest
+    responses:
+      200:
+        description: Successful response with calculated age.
+        body:
+          application/json:
+            type: AgeResponse
+      400:
+        description: Invalid input (future birthdate).
+        body:
+          application/json:
+            type: ErrorResponse             
